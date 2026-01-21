@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAZA COFFEE - Food Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">RAZA <span class="logo-highlight">COFFEE</span></span>
+            </a>
+            
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="menu.html" class="nav-link active">Our Menu</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+                <a href="#" class="btn-order">Order Online</a>
+            </div>
+            
+            <button class="hamburger" id="hamburger">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="about.html" class="mobile-nav-link">About</a>
+            <a href="menu.html" class="mobile-nav-link active">Our Menu</a>
+            <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+            <a href="#" class="mobile-btn-order">Order Online</a>
+        </div>
+    </nav>
+
+    <!-- Food Hero -->
+    <section class="page-hero food-hero">
+        <div class="container">
+            <h1 class="page-title fade-in">Food <span class="highlight">Menu</span></h1>
+            <p class="page-subtitle">Delicious bites and meals to complement your favorite drink</p>
+        </div>
+    </section>
+
+    <!-- Food Menu -->
+    <section class="menu-page">
+        <div class="container">
+            <div class="menu-header">
+                <div class="menu-back">
+                    <a href="menu.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to All Categories</a>
+                </div>
+                <div class="menu-filter">
+                    <button class="filter-btn active" data-filter="all">All Food</button>
+                    <button class="filter-btn" data-filter="pastry">Pastries</button>
+                    <button class="filter-btn" data-filter="sandwich">Sandwiches</button>
+                    <button class="filter-btn" data-filter="dessert">Desserts</button>
+                </div>
+            </div>
+            
+            <div class="menu-items">
+                <!-- Pastries -->
+                <div class="menu-category">
+                    <h2 class="category-title">Pastries & Baked Goods</h2>
+                    <div class="menu-items-grid">
+                        <div class="menu-item-card" data-category="pastry">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Croissant</h3>
+                                <p class="item-description">Buttery, flaky viennoiserie pastry made with layered yeast-leavened dough</p>
+                                <div class="item-price">IDR 25K</div>
+                            </div>
+                            <div class="item-badge">Fresh Daily</div>
+                        </div>
+                        
+                        <div class="menu-item-card" data-category="pastry">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Chocolate Croissant</h3>
+                                <p class="item-description">Classic croissant filled with rich dark chocolate</p>
+                                <div class="item-price">IDR 28K</div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item-card" data-category="pastry">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Blueberry Muffin</h3>
+                                <p class="item-description">Moist muffin packed with fresh blueberries</p>
+                                <div class="item-price">IDR 22K</div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item-card" data-category="pastry">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Cinnamon Roll</h3>
+                                <p class="item-description">Sweet roll with cinnamon sugar filling and cream cheese frosting</p>
+                                <div class="item-price">IDR 30K</div>
+                            </div>
+                            <div class="item-badge">Popular</div>
+                        </div>
+                        
+                        <div class="menu-item-card" data-category="pastry">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Bagel with Cream Cheese</h3>
+                                <p class="item-description">Freshly baked bagel served with cream cheese</p>
+                                <div class="item-price">IDR 25K</div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item-card" data-category="pastry">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Almond Croissant</h3>
+                                <p class="item-description">Croissant filled with almond cream and topped with sliced almonds</p>
+                                <div class="item-price">IDR 32K</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sandwiches -->
+                <div class="menu-category">
+                    <h2 class="category-title">Sandwiches & Savory Items</h2>
+                    <div class="menu-items-grid">
+                        <div class="menu-item-card" data-category="sandwich">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Avocado Toast</h3>
+                                <p class="item-description">Sourdough bread topped with mashed avocado, cherry tomatoes, and herbs</p>
+                                <div class="item-price">IDR 42K</div>
+                            </div>
+                            <div class="item-badge">Best Seller</div>
+                        </div>
+                        
+                        <div class="menu-item-card" data-category="sandwich">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Turkey & Cheese Sandwich</h3>
+                                <p class="item-description">Sliced turkey, cheddar cheese, lettuce, tomato on multigrain bread</p>
+                                <div class="item-price">IDR 45K</div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item-card" data-category="sandwich">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Caprese Panini</h3>
+                                <p class="item-description">Fresh mozzarella, tomatoes, basil pesto pressed in ciabatta bread</p>
+                                <div class="item-price">IDR 40K</div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item-card" data-category="sandwich">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Chicken Caesar Wrap</h3>
+                                <p class="item-description">Grilled chicken, romaine lettuce, parmesan, Caesar dressing in a wrap</p>
+                                <div class="item-price">IDR 45K</div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item-card" data-category="sandwich">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Quiche Lorraine</h3>
+                                <p class="item-description">Savory tart with eggs, cream, bacon, and cheese in a pastry crust</p>
+                                <div class="item-price">IDR 38K</div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item-card" data-category="sandwich">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Greek Salad</h3>
+                                <p class="item-description">Fresh cucumbers, tomatoes, olives, feta cheese, and red onion</p>
+                                <div class="item-price">IDR 40K</div>
+                            </div>
+                            <div class="item-badge">Healthy</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desserts -->
+                <div class="menu-category">
+                    <h2 class="category-title">Desserts & Sweet Treats</h2>
+                    <div class="menu-items-grid">
+                        <div class="menu-item-card" data-category="dessert">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">New York Cheesecake</h3>
+                                <p class="item-description">Classic creamy cheesecake with a graham cracker crust</p>
+                                <div class="item-price">IDR 45K</div>
+                            </div>
+                            <div class="item-badge">Signature</div>
+                        </div>
+                        
+                        <div class="menu-item-card" data-category="dessert">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Chocolate Brownie</h3>
+                                <p class="item-description">Rich, fudgy chocolate brownie with walnuts</p>
+                                <div class="item-price">IDR 28K</div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item-card" data-category="dessert">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Tiramisu</h3>
+                                <p class="item-description">Coffee-flavored Italian dessert with layers of mascarpone cream</p>
+                                <div class="item-price">IDR 42K</div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item-card" data-category="dessert">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Chocolate Chip Cookies</h3>
+                                <p class="item-description">Freshly baked cookies loaded with chocolate chips</p>
+                                <div class="item-price">IDR 18K</div>
+                            </div>
+                            <div class="item-badge">Fresh Daily</div>
+                        </div>
+                        
+                        <div class="menu-item-card" data-category="dessert">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Fruit Tart</h3>
+                                <p class="item-description">Pastry crust filled with custard and topped with fresh fruits</p>
+                                <div class="item-price">IDR 35K</div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item-card" data-category="dessert">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Red Velvet Cupcake</h3>
+                                <p class="item-description">Moist red velvet cupcake with cream cheese frosting</p>
+                                <div class="item-price">IDR 25K</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">RAZA <span class="logo-highlight">COFFEE</span></span>
+                    <p>Premium coffee experience since 2010</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="menu.html">Our Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Coffee Street No. 123, Jakarta</li>
+                        <li><i class="fas fa-phone"></i> (021) 1234-5678</li>
+                        <li><i class="fas fa-envelope"></i> info@razacoffee.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sun: 7AM - 10PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 RAZA COFFEE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Filter functionality for food menu
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const menuItems = document.querySelectorAll('.menu-item-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Show/hide menu items based on filter
+                    menuItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
