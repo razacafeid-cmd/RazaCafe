@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAZA COFFEE - Ramadhan Special Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Gaya tambahan untuk konsistensi */
+        .item-price-single {
+            font-weight: 700;
+            color: var(--primary-brown);
+            font-size: 1.2rem;
+            display: block;
+            line-height: 1.6;
+        }
+        .item-label {
+            font-style: italic;
+            color: var(--light-brown);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .menu-item-card {
+            display: flex;
+            align-items: flex-start;
+        }
+        .item-image {
+            width: 120px;
+            height: 120px;
+            flex-shrink: 0;
+            margin-right: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .item-image img:hover {
+            transform: scale(1.05);
+        }
+        .ramadhan-note {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: var(--cream);
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-brown);
+            border: 2px dashed var(--primary-brown);
+        }
+        .ramadhan-note i {
+            color: red;
+            font-size: 1.5rem;
+            margin-right: 5px;
+        }
+        @media (max-width: 768px) {
+            .menu-item-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .item-image {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">RAZA <span class="logo-highlight">COFFEE & TEA</span></span>
+            </a>
+            
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="menu.html" class="nav-link active">Our Menu</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+            </div>
+            
+            <button class="hamburger" id="hamburger">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+        
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="about.html" class="mobile-nav-link">About</a>
+            <a href="menu.html" class="mobile-nav-link active">Our Menu</a>
+            <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Ramadhan Hero -->
+    <section class="page-hero" style="background: linear-gradient(rgba(245, 233, 217, 0.9), rgba(245, 233, 217, 0.9)), url('https://images.unsplash.com/photo-1555939594-58d7cb561404?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;">
+        <div class="container">
+            <h1 class="page-title fade-in">Ramadhan <span class="highlight">Special</span></h1>
+            <p class="page-subtitle">Nikmati menu spesial bulan Ramadhan hanya di RAZA COFFEE</p>
+        </div>
+    </section>
+
+    <!-- Ramadhan Menu -->
+    <section class="menu-page">
+        <div class="container">
+            <div class="menu-header">
+                <div class="menu-back">
+                    <a href="menu.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to All Categories</a>
+                </div>
+            </div>
+            
+            <div class="menu-items">
+                <!-- Makanan (Ramadhan) -->
+                <div class="menu-category">
+                    <h2 class="category-title">Makanan Spesial Ramadhan</h2>
+                    <div class="menu-items-grid">
+                        <!-- Sate Ayam -->
+                        <div class="menu-item-card" data-category="ramadhan">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Sate Ayam</h3>
+                                <p class="item-description">Sate ayam bumbu kacang, lontong, dan sambal</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">IDR 15K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Sate Taichan -->
+                        <div class="menu-item-card" data-category="ramadhan">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Sate Taichan</h3>
+                                <p class="item-description">Sate ayam tanpa bumbu kacang, dengan sambal dan jeruk nipis</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">IDR 15K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ayam Krispi -->
+                        <div class="menu-item-card" data-category="ramadhan">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Ayam Krispi</h3>
+                                <p class="item-description">Ayam goreng tepung crispy, disajikan dengan sambal</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">IDR 18K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ayam Geprek -->
+                        <div class="menu-item-card" data-category="ramadhan">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Ayam Geprek</h3>
+                                <p class="item-description">Ayam crispy digeprek dengan sambal bawang</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">IDR 20K</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Free Teh Es Note -->
+            <div class="ramadhan-note">
+                <i class="fas fa-heart"></i> FREE TEH ES <i class="fas fa-heart"></i><br>
+                <span>Selama bulan Ramadhan, setiap pembelian menu di atas mendapat teh es gratis! 🥰</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">RAZA <span class="logo-highlight">COFFEE</span></span>
+                    <p>Teman Setia Setiap Hari</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="menu.html">Our Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Lingkar Negara, Depan Bundaran Tugu Terigas Sambas</li>
+                        <li><i class="fas fa-phone"></i> 0822-5105-5154</li>
+                        <li><i class="fas fa-envelope"></i> razacafe.id@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Setiap Hari 10:00 - 23:00 WIB</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 RAZA COFFEE & TEA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -7,37 +7,48 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Price styling */
+        .item-price-single {
+            font-weight: 700;
+            color: var(--primary-brown);
+            font-size: 1.2rem;
+            display: block;
+            line-height: 1.6;
+        }
+        .item-price-hot, .item-price-ice {
+            font-weight: 700;
+            color: var(--primary-brown);
+            font-size: 1.2rem;
+            display: block;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <span class="logo-text">RAZA <span class="logo-highlight">COFFEE</span></span>
+                <span class="logo-text">RAZA <span class="logo-highlight">COFFEE & TEA</span></span>
             </a>
-            
             <div class="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="menu.html" class="nav-link active">Our Menu</a>
                 <a href="contact.html" class="nav-link">Contact Us</a>
-                <a href="#" class="btn-order">Order Online</a>
             </div>
-            
             <button class="hamburger" id="hamburger">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
             </button>
         </div>
-        
-        <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <a href="index.html" class="mobile-nav-link">Home</a>
             <a href="about.html" class="mobile-nav-link">About</a>
             <a href="menu.html" class="mobile-nav-link active">Our Menu</a>
             <a href="contact.html" class="mobile-nav-link">Contact Us</a>
-            <a href="#" class="mobile-btn-order">Order Online</a>
         </div>
     </nav>
 
@@ -56,139 +67,211 @@
                 <div class="menu-back">
                     <a href="menu.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to All Categories</a>
                 </div>
-                <div class="menu-filter">
-                    <button class="filter-btn active" data-filter="all">All Coffee</button>
-                    <button class="filter-btn" data-filter="espresso">Espresso Based</button>
-                    <button class="filter-btn" data-filter="brewed">Brewed Coffee</button>
-                    <button class="filter-btn" data-filter="cold">Cold Coffee</button>
-                </div>
             </div>
-            
             <div class="menu-items">
-                <!-- Espresso Based -->
+                <!-- Coffee -->
                 <div class="menu-category">
-                    <h2 class="category-title">Espresso Based Drinks</h2>
+                    <h2 class="category-title">Coffee</h2>
                     <div class="menu-items-grid">
-                        <div class="menu-item-card" data-category="espresso">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Espresso</h3>
-                                <p class="item-description">A concentrated coffee brewed by forcing hot water through finely-ground coffee beans</p>
-                                <div class="item-price">IDR 18K</div>
-                            </div>
-                            <div class="item-badge">Signature</div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="espresso">
+                        <div class="menu-item-card" data-category="coffee">
                             <div class="menu-item-content">
                                 <h3 class="item-name">Americano</h3>
-                                <p class="item-description">Espresso shots topped with hot water, producing a light layer of crema</p>
-                                <div class="item-price">IDR 22K</div>
+                                <p class="item-description">Espresso dengan air panas</p>
+                                <div class="price-container">
+                                    <span class="item-price-hot">Hot 10K</span>
+                                    <span class="item-price-ice">Cold 13K</span>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="menu-item-card" data-category="espresso">
+                        <div class="menu-item-card" data-category="coffee">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Espresso Single Shot</h3>
+                                <p class="item-description">Kopi espresso pekat satu shot</p>
+                                <div class="price-container">
+                                    <span class="item-price-ice">Cold 10K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card" data-category="coffee">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Espresso Double Shot</h3>
+                                <p class="item-description">Kopi espresso pekat dua shot</p>
+                                <div class="price-container">
+                                    <span class="item-price-ice">Cold 15K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card" data-category="coffee">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">V60</h3>
+                                <p class="item-description">Kopi seduh manual dengan alat V60, hasil bersih dan kaya rasa</p>
+                                <div class="price-container">
+                                    <span class="item-price-ice">Cold 22K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card" data-category="coffee">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Japanese</h3>
+                                <p class="item-description">Kopi seduh Jepang, bersih dan aromatis</p>
+                                <div class="price-container">
+                                    <span class="item-price-hot">Hot 23K</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coffee Signature -->
+                <div class="menu-category">
+                    <h2 class="category-title">Coffee Signature</h2>
+                    <div class="menu-items-grid">
+                        <div class="menu-item-card" data-category="signature">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">RAZA Coffee</h3>
+                                <p class="item-description">Kopi original spesial RAZA</p>
+                                <div class="price-container">
+                                    <span class="item-price-ice">Cold 18K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card" data-category="signature">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Gula Aren</h3>
+                                <p class="item-description">Kopi dengan gula aren, manis dan karamel</p>
+                                <div class="price-container">
+                                    <span class="item-price-ice">Cold 20K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card" data-category="signature">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Mochachino</h3>
+                                <p class="item-description">Espresso dengan cokelat dan susu creamy</p>
+                                <div class="price-container">
+                                    <span class="item-price-ice">Cold 22K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card" data-category="signature">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Kopi Syahdu</h3>
+                                <p class="item-description">Kopi istimewa dengan rasa yang menawan</p>
+                                <div class="price-container">
+                                    <span class="item-price-ice">Cold 22K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card" data-category="signature">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Coffee Shraddha</h3>
+                                <p class="item-description">Kopi spesial dengan cita rasa yang unik</p>
+                                <div class="price-container">
+                                    <span class="item-price-ice">Cold 22K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card" data-category="signature">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Coffee Akasha</h3>
+                                <p class="item-description">Kopi eksotis dengan kehangatan yang sempurna</p>
+                                <div class="price-container">
+                                    <span class="item-price-ice">Cold 22K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card" data-category="signature">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Salted Caramel Coffee</h3>
+                                <p class="item-description">Kopi dengan karamel asin yang lezat</p>
+                                <div class="price-container">
+                                    <span class="item-price-ice">Cold 20K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card" data-category="signature">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Butterscotch Latte</h3>
+                                <p class="item-description">Kopi dengan butterscotch dan susu lembut</p>
+                                <div class="price-container">
+                                    <span class="item-price-ice">Cold 20K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card" data-category="signature">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Caramel Coffee</h3>
+                                <p class="item-description">Kopi dengan karamel manis yang lembut</p>
+                                <div class="price-container">
+                                    <span class="item-price-ice">Cold 20K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card" data-category="signature">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Vanilla Coffee</h3>
+                                <p class="item-description">Kopi dengan sirup vanilla manis</p>
+                                <div class="price-container">
+                                    <span class="item-price-ice">Cold 20K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card" data-category="signature">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Salta Coffee Milk</h3>
+                                <p class="item-description">Espresso dengan susu creamy yang lembut</p>
+                                <div class="price-container">
+                                    <span class="item-price-ice">Cold 20K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card" data-category="signature">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Hazelnut Coffee</h3>
+                                <p class="item-description">Kopi dengan sirup hazelnut yang aromatis</p>
+                                <div class="price-container">
+                                    <span class="item-price-ice">Cold 20K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card" data-category="signature">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Chon Hillo</h3>
+                                <p class="item-description">Kopi ringan dan menyegarkan dengan rasa khas</p>
+                                <div class="price-container">
+                                    <span class="item-price-ice">Cold 18K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card" data-category="signature">
                             <div class="menu-item-content">
                                 <h3 class="item-name">Cappuccino</h3>
-                                <p class="item-description">Equal parts espresso, steamed milk, and thick milk foam</p>
-                                <div class="item-price">IDR 28K</div>
-                            </div>
-                            <div class="item-badge">Popular</div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="espresso">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Latte</h3>
-                                <p class="item-description">Espresso with steamed milk and a light layer of foam</p>
-                                <div class="item-price">IDR 30K</div>
+                                <p class="item-description">Espresso dengan susu foam lembut dan seimbang</p>
+                                <div class="price-container">
+                                    <span class="item-price-hot">Hot 16K</span>
+                                    <span class="item-price-ice">Cold 18K</span>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="menu-item-card" data-category="espresso">
+                        <div class="menu-item-card" data-category="signature">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Caramel Macchiato</h3>
-                                <p class="item-description">Vanilla syrup, steamed milk, espresso, and caramel drizzle</p>
-                                <div class="item-price">IDR 35K</div>
-                            </div>
-                            <div class="item-badge">Best Seller</div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="espresso">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Mocha</h3>
-                                <p class="item-description">Espresso with steamed milk, chocolate syrup, and whipped cream</p>
-                                <div class="item-price">IDR 32K</div>
+                                <h3 class="item-name">Coffee Milk</h3>
+                                <p class="item-description">Kopi dengan susu creamy lembut dan nikmat</p>
+                                <div class="price-container">
+                                    <span class="item-price-hot">Hot 16K</span>
+                                    <span class="item-price-ice">Cold 18K</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Brewed Coffee -->
-                <div class="menu-category">
-                    <h2 class="category-title">Brewed Coffee</h2>
-                    <div class="menu-items-grid">
-                        <div class="menu-item-card" data-category="brewed">
+                        <div class="menu-item-card" data-category="signature">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Pour Over</h3>
-                                <p class="item-description">Single-origin beans brewed manually for maximum flavor extraction</p>
-                                <div class="item-price">IDR 25K</div>
+                                <h3 class="item-name">Coffee Latte</h3>
+                                <p class="item-description">Espresso dengan susu creamy dan rasa kopi ringan</p>
+                                <div class="price-container">
+                                    <span class="item-price-hot">Hot 16K</span>
+                                    <span class="item-price-ice">Cold 18K</span>
+                                </div>
                             </div>
-                            <div class="item-badge">Artisan</div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="brewed">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">French Press</h3>
-                                <p class="item-description">Full-bodied coffee brewed by steeping coarsely ground beans in hot water</p>
-                                <div class="item-price">IDR 28K</div>
-                            </div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="brewed">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Aeropress</h3>
-                                <p class="item-description">Smooth, rich coffee made using air pressure for a clean taste</p>
-                                <div class="item-price">IDR 26K</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Cold Coffee -->
-                <div class="menu-category">
-                    <h2 class="category-title">Cold Coffee</h2>
-                    <div class="menu-items-grid">
-                        <div class="menu-item-card" data-category="cold">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Cold Brew</h3>
-                                <p class="item-description">Coffee steeped in cold water for 12 hours, served over ice</p>
-                                <div class="item-price">IDR 28K</div>
-                            </div>
-                            <div class="item-badge">Refreshing</div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="cold">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Iced Americano</h3>
-                                <p class="item-description">Espresso poured over ice and topped with cold water</p>
-                                <div class="item-price">IDR 25K</div>
-                            </div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="cold">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Iced Latte</h3>
-                                <p class="item-description">Espresso poured over ice and mixed with cold milk</p>
-                                <div class="item-price">IDR 30K</div>
-                            </div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="cold">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Affogato</h3>
-                                <p class="item-description">Vanilla ice cream topped with a shot of hot espresso</p>
-                                <div class="item-price">IDR 35K</div>
-                            </div>
-                            <div class="item-badge">Dessert</div>
                         </div>
                     </div>
                 </div>
@@ -196,21 +279,13 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
                     <span class="logo-text">RAZA <span class="logo-highlight">COFFEE</span></span>
-                    <p>Premium coffee experience since 2010</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                    </div>
+                    <p>Teman Setia Setiap Hari</p>
                 </div>
-                
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
@@ -220,52 +295,21 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-contact">
                     <h3>Contact Info</h3>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Jl. Coffee Street No. 123, Jakarta</li>
-                        <li><i class="fas fa-phone"></i> (021) 1234-5678</li>
-                        <li><i class="fas fa-envelope"></i> info@razacoffee.com</li>
-                        <li><i class="fas fa-clock"></i> Mon-Sun: 7AM - 10PM</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Lingkar Negara, Depan Bundaran Tugu Terigas Sambas</li>
+                        <li><i class="fas fa-phone"></i> 0822-5105-5154</li>
+                        <li><i class="fas fa-envelope"></i> razacafe.id@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Setiap Hari 10:00 - 23:00 WIB</li>
                     </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2023 RAZA COFFEE. All rights reserved.</p>
+                <p>&copy; 2026 RAZA COFFEE & TEA. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
     <script src="script.js"></script>
-    <script>
-        // Filter functionality for coffee menu
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const menuItems = document.querySelectorAll('.menu-item-card');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    const filterValue = this.getAttribute('data-filter');
-                    
-                    // Show/hide menu items based on filter
-                    menuItems.forEach(item => {
-                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                            item.style.display = 'flex';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>

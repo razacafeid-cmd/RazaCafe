@@ -7,13 +7,63 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Gaya tambahan untuk konsistensi */
+        .item-price-single {
+            font-weight: 700;
+            color: var(--primary-brown);
+            font-size: 1.2rem;
+            display: block;
+            line-height: 1.6;
+        }
+        .item-label {
+            font-style: italic;
+            color: var(--light-brown);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .menu-item-card {
+            display: flex;
+            align-items: flex-start;
+        }
+        .item-image {
+            width: 120px;
+            height: 120px;
+            flex-shrink: 0;
+            margin-right: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .item-image img:hover {
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .menu-item-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .item-image {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <span class="logo-text">RAZA <span class="logo-highlight">COFFEE</span></span>
+                <span class="logo-text">RAZA <span class="logo-highlight">COFFEE & TEA</span></span>
             </a>
             
             <div class="nav-menu">
@@ -21,7 +71,6 @@
                 <a href="about.html" class="nav-link">About</a>
                 <a href="menu.html" class="nav-link active">Our Menu</a>
                 <a href="contact.html" class="nav-link">Contact Us</a>
-                <a href="#" class="btn-order">Order Online</a>
             </div>
             
             <button class="hamburger" id="hamburger">
@@ -31,13 +80,11 @@
             </button>
         </div>
         
-        <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <a href="index.html" class="mobile-nav-link">Home</a>
             <a href="about.html" class="mobile-nav-link">About</a>
             <a href="menu.html" class="mobile-nav-link active">Our Menu</a>
             <a href="contact.html" class="mobile-nav-link">Contact Us</a>
-            <a href="#" class="mobile-btn-order">Order Online</a>
         </div>
     </nav>
 
@@ -45,7 +92,7 @@
     <section class="page-hero food-hero">
         <div class="container">
             <h1 class="page-title fade-in">Food <span class="highlight">Menu</span></h1>
-            <p class="page-subtitle">Delicious bites and meals to complement your favorite drink</p>
+            <p class="page-subtitle">Cemilan dan hidangan lezat untuk melengkapi minuman favorit Anda.</p>
         </div>
     </section>
 
@@ -56,178 +103,295 @@
                 <div class="menu-back">
                     <a href="menu.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to All Categories</a>
                 </div>
-                <div class="menu-filter">
-                    <button class="filter-btn active" data-filter="all">All Food</button>
-                    <button class="filter-btn" data-filter="pastry">Pastries</button>
-                    <button class="filter-btn" data-filter="sandwich">Sandwiches</button>
-                    <button class="filter-btn" data-filter="dessert">Desserts</button>
-                </div>
             </div>
             
             <div class="menu-items">
-                <!-- Pastries -->
+                <!-- MAKANAN -->
                 <div class="menu-category">
-                    <h2 class="category-title">Pastries & Baked Goods</h2>
+                    <h2 class="category-title">MAKANAN</h2>
                     <div class="menu-items-grid">
-                        <div class="menu-item-card" data-category="pastry">
+                        <!-- Nasi Goreng Biasa -->
+                        <div class="menu-item-card" data-category="makanan">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Croissant</h3>
-                                <p class="item-description">Buttery, flaky viennoiserie pastry made with layered yeast-leavened dough</p>
-                                <div class="item-price">IDR 25K</div>
-                            </div>
-                            <div class="item-badge">Fresh Daily</div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="pastry">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Chocolate Croissant</h3>
-                                <p class="item-description">Classic croissant filled with rich dark chocolate</p>
-                                <div class="item-price">IDR 28K</div>
+                                <h3 class="item-name">Nasi Goreng Biasa</h3>
+                                <p class="item-description">Nasi goreng klasik dengan bumbu sederhana</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">15K</span>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="menu-item-card" data-category="pastry">
+                        <!-- Nasi Goreng Telur -->
+                        <div class="menu-item-card" data-category="makanan">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Blueberry Muffin</h3>
-                                <p class="item-description">Moist muffin packed with fresh blueberries</p>
-                                <div class="item-price">IDR 22K</div>
+                                <h3 class="item-name">Nasi Goreng Telur</h3>
+                                <p class="item-description">Nasi goreng dengan telur dadar</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">18K</span>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="menu-item-card" data-category="pastry">
+                        <!-- Nasi Goreng Seafood -->
+                        <div class="menu-item-card" data-category="makanan">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Cinnamon Roll</h3>
-                                <p class="item-description">Sweet roll with cinnamon sugar filling and cream cheese frosting</p>
-                                <div class="item-price">IDR 30K</div>
-                            </div>
-                            <div class="item-badge">Popular</div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="pastry">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Bagel with Cream Cheese</h3>
-                                <p class="item-description">Freshly baked bagel served with cream cheese</p>
-                                <div class="item-price">IDR 25K</div>
+                                <h3 class="item-name">Nasi Goreng Seafood</h3>
+                                <p class="item-description">Nasi goreng dengan udang, cumi, dan ikan</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">20K</span>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="menu-item-card" data-category="pastry">
+                        <!-- Mie Goreng -->
+                        <div class="menu-item-card" data-category="makanan">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Almond Croissant</h3>
-                                <p class="item-description">Croissant filled with almond cream and topped with sliced almonds</p>
-                                <div class="item-price">IDR 32K</div>
+                                <h3 class="item-name">Mie Goreng</h3>
+                                <p class="item-description">Mie goreng tradisional</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">15K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mie Goreng Telur -->
+                        <div class="menu-item-card" data-category="makanan">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Mie Goreng Telur</h3>
+                                <p class="item-description">Mie goreng dengan telur</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">18K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mie Chili Oil -->
+                        <div class="menu-item-card" data-category="makanan">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Mie Chili Oil</h3>
+                                <p class="item-description">Mie dengan minyak cabai pedas</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">18K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mie Tiaw -->
+                        <div class="menu-item-card" data-category="makanan">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Mie Tiaw</h3>
+                                <p class="item-description">Mie tiaw gurih</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">15K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ricebowl Ayam Sambal Matah -->
+                        <div class="menu-item-card" data-category="makanan">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Ricebowl Ayam Sambal Matah</h3>
+                                <p class="item-description">Nasi dengan ayam suwir dan sambal matah</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">20K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ricebowl Ayam Rica-Rica -->
+                        <div class="menu-item-card" data-category="makanan">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Ricebowl Ayam Rica-Rica</h3>
+                                <p class="item-description">Nasi dengan ayam rica-rica pedas</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">20K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ricebowl Udang Pedas Manis -->
+                        <div class="menu-item-card" data-category="makanan">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Ricebowl Udang Pedas Manis</h3>
+                                <p class="item-description">Nasi dengan udang saus pedas manis</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">20K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ricebowl Udang Sambal Petai -->
+                        <div class="menu-item-card" data-category="makanan">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Ricebowl Udang Sambal Petai</h3>
+                                <p class="item-description">Nasi dengan udang dan sambal petai</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">20K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ricebowl Cumi Goreng Tepung -->
+                        <div class="menu-item-card" data-category="makanan">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Ricebowl Cumi Goreng Tepung</h3>
+                                <p class="item-description">Nasi dengan cumi goreng tepung</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">20K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ricebowl Cumi Hitam Pedas -->
+                        <div class="menu-item-card" data-category="makanan">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Ricebowl Cumi Hitam Pedas</h3>
+                                <p class="item-description">Nasi dengan cumi hitam pedas</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">20K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Indomie Rebus/Goreng -->
+                        <div class="menu-item-card" data-category="makanan">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Indomie Rebus/Goreng</h3>
+                                <p class="item-description">Indomie kuah atau goreng</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">10K</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Sandwiches -->
+
+                <!-- DIMSUM -->
                 <div class="menu-category">
-                    <h2 class="category-title">Sandwiches & Savory Items</h2>
+                    <h2 class="category-title">DIMSUM</h2>
                     <div class="menu-items-grid">
-                        <div class="menu-item-card" data-category="sandwich">
+                        <!-- Dimsum Original -->
+                        <div class="menu-item-card" data-category="dimsum">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Avocado Toast</h3>
-                                <p class="item-description">Sourdough bread topped with mashed avocado, cherry tomatoes, and herbs</p>
-                                <div class="item-price">IDR 42K</div>
-                            </div>
-                            <div class="item-badge">Best Seller</div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="sandwich">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Turkey & Cheese Sandwich</h3>
-                                <p class="item-description">Sliced turkey, cheddar cheese, lettuce, tomato on multigrain bread</p>
-                                <div class="item-price">IDR 45K</div>
+                                <h3 class="item-name">Dimsum Original</h3>
+                                <p class="item-description">Siomay ayam original</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">18K</span>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="menu-item-card" data-category="sandwich">
+                        <!-- Dimsum Mentai -->
+                        <div class="menu-item-card" data-category="dimsum">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Caprese Panini</h3>
-                                <p class="item-description">Fresh mozzarella, tomatoes, basil pesto pressed in ciabatta bread</p>
-                                <div class="item-price">IDR 40K</div>
+                                <h3 class="item-name">Dimsum Mentai</h3>
+                                <p class="item-description">Siomay dengan saus mentai</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">20K</span>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="menu-item-card" data-category="sandwich">
+                        <!-- Dimsum Moza -->
+                        <div class="menu-item-card" data-category="dimsum">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Chicken Caesar Wrap</h3>
-                                <p class="item-description">Grilled chicken, romaine lettuce, parmesan, Caesar dressing in a wrap</p>
-                                <div class="item-price">IDR 45K</div>
+                                <h3 class="item-name">Dimsum Moza</h3>
+                                <p class="item-description">Siomay dengan topping mozzarella</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">20K</span>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="menu-item-card" data-category="sandwich">
+                        <!-- Lumpia Kulit Tahu -->
+                        <div class="menu-item-card" data-category="dimsum">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Quiche Lorraine</h3>
-                                <p class="item-description">Savory tart with eggs, cream, bacon, and cheese in a pastry crust</p>
-                                <div class="item-price">IDR 38K</div>
+                                <h3 class="item-name">Lumpia Kulit Tahu</h3>
+                                <p class="item-description">Lumpia dengan kulit tahu</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">18K</span>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="sandwich">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Greek Salad</h3>
-                                <p class="item-description">Fresh cucumbers, tomatoes, olives, feta cheese, and red onion</p>
-                                <div class="item-price">IDR 40K</div>
-                            </div>
-                            <div class="item-badge">Healthy</div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Desserts -->
+
+                <!-- NYEMIL -->
                 <div class="menu-category">
-                    <h2 class="category-title">Desserts & Sweet Treats</h2>
+                    <h2 class="category-title">NYEMIL</h2>
                     <div class="menu-items-grid">
-                        <div class="menu-item-card" data-category="dessert">
+                        <!-- Empek-Empek -->
+                        <div class="menu-item-card" data-category="nyemil">
                             <div class="menu-item-content">
-                                <h3 class="item-name">New York Cheesecake</h3>
-                                <p class="item-description">Classic creamy cheesecake with a graham cracker crust</p>
-                                <div class="item-price">IDR 45K</div>
-                            </div>
-                            <div class="item-badge">Signature</div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="dessert">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Chocolate Brownie</h3>
-                                <p class="item-description">Rich, fudgy chocolate brownie with walnuts</p>
-                                <div class="item-price">IDR 28K</div>
+                                <h3 class="item-name">Empek-Empek</h3>
+                                <p class="item-description">Empek-empek Palembang dengan cuko</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">20K</span>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="menu-item-card" data-category="dessert">
+                        <!-- Kentang Goreng -->
+                        <div class="menu-item-card" data-category="nyemil">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Tiramisu</h3>
-                                <p class="item-description">Coffee-flavored Italian dessert with layers of mascarpone cream</p>
-                                <div class="item-price">IDR 42K</div>
+                                <h3 class="item-name">Kentang Goreng</h3>
+                                <p class="item-description">Kentang goreng renyah</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">13K</span>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="menu-item-card" data-category="dessert">
+                        <!-- Sosis Goreng -->
+                        <div class="menu-item-card" data-category="nyemil">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Chocolate Chip Cookies</h3>
-                                <p class="item-description">Freshly baked cookies loaded with chocolate chips</p>
-                                <div class="item-price">IDR 18K</div>
-                            </div>
-                            <div class="item-badge">Fresh Daily</div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="dessert">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Fruit Tart</h3>
-                                <p class="item-description">Pastry crust filled with custard and topped with fresh fruits</p>
-                                <div class="item-price">IDR 35K</div>
+                                <h3 class="item-name">Sosis Goreng</h3>
+                                <p class="item-description">Sosis goreng</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">13K</span>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="menu-item-card" data-category="dessert">
+                        <!-- Nugget Goreng -->
+                        <div class="menu-item-card" data-category="nyemil">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Red Velvet Cupcake</h3>
-                                <p class="item-description">Moist red velvet cupcake with cream cheese frosting</p>
-                                <div class="item-price">IDR 25K</div>
+                                <h3 class="item-name">Nugget Goreng</h3>
+                                <p class="item-description">Nugget ayam goreng</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">13K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Jamur Enoki Crispy -->
+                        <div class="menu-item-card" data-category="nyemil">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Jamur Enoki Crispy</h3>
+                                <p class="item-description">Jamur enoki digoreng crispy</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">15K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pisang Goreng (dengan varian) -->
+                        <div class="menu-item-card" data-category="nyemil">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Pisang Goreng</h3>
+                                <p class="item-description">Varian: Coklat, Strawberry, Greentea, MIX</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">15K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mix Platter -->
+                        <div class="menu-item-card" data-category="nyemil">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Mix Platter</h3>
+                                <p class="item-description">Sosis, Kentang & Nugget</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">18K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Tahu Walik -->
+                        <div class="menu-item-card" data-category="nyemil">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Tahu Walik</h3>
+                                <p class="item-description">Tahu goreng isi sayuran</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">15K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Risol Mayo -->
+                        <div class="menu-item-card" data-category="nyemil">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Risol Mayo</h3>
+                                <p class="item-description">Risol dengan isian mayonaise dan telur</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">15K</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -236,19 +400,12 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
                     <span class="logo-text">RAZA <span class="logo-highlight">COFFEE</span></span>
-                    <p>Premium coffee experience since 2010</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                    </div>
+                    <p>Teman Setia Setiap Hari</p>
                 </div>
                 
                 <div class="footer-links">
@@ -264,48 +421,21 @@
                 <div class="footer-contact">
                     <h3>Contact Info</h3>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Jl. Coffee Street No. 123, Jakarta</li>
-                        <li><i class="fas fa-phone"></i> (021) 1234-5678</li>
-                        <li><i class="fas fa-envelope"></i> info@razacoffee.com</li>
-                        <li><i class="fas fa-clock"></i> Mon-Sun: 7AM - 10PM</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Lingkar Negara, Depan Bundaran Tugu Terigas Sambas</li>
+                        <li><i class="fas fa-phone"></i> 0822-5105-5154</li>
+                        <li><i class="fas fa-envelope"></i> razacafe.id@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Setiap Hari 10:00 - 23:00 WIB</li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 RAZA COFFEE. All rights reserved.</p>
+                <p>&copy; 2026 RAZA COFFEE & TEA. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+
     <script src="script.js"></script>
-    <script>
-        // Filter functionality for food menu
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const menuItems = document.querySelectorAll('.menu-item-card');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    const filterValue = this.getAttribute('data-filter');
-                    
-                    // Show/hide menu items based on filter
-                    menuItems.forEach(item => {
-                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                            item.style.display = 'flex';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>

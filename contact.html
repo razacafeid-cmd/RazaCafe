@@ -13,7 +13,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <span class="logo-text">RAZA <span class="logo-highlight">COFFEE</span></span>
+                <span class="logo-text">RAZA <span class="logo-highlight">COFFEE & TEA</span></span>
             </a>
             
             <div class="nav-menu">
@@ -43,7 +43,7 @@
     <section class="page-hero contact-hero">
         <div class="container">
             <h1 class="page-title fade-in">Contact <span class="highlight">Us</span></h1>
-            <p class="page-subtitle">Butuh teman ngopi? Sapa kami di sini," atau "Punya pertanyaan atau ingin reservasi? Hubungi contact di bawah ini</p>
+            <p class="page-subtitle">Butuh teman ngopi? Sapa kami di sini, atau punya pertanyaan atau ingin reservasi? Hubungi contact di bawah ini</p>
         </div>
     </section>
 
@@ -62,7 +62,7 @@
                             </div>
                             <div class="contact-text">
                                 <h3>Lokasi</h3>
-                                <p>Lumbang, Kec. Sambas<br>Kabupaten sambas, Kalimantan barat<br>Indonesia</p>
+                                <p>Lumbang, Kec. Sambas<br>Kabupaten Sambas, Kalimantan Barat<br>Indonesia</p>
                             </div>
                         </div>
                         
@@ -127,17 +127,12 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
                     <span class="logo-text">RAZA <span class="logo-highlight">COFFEE</span></span>
-                    <p>Premium coffee experience since 2024</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                    </div>
+                    <p>Teman Setia Setiap Hari</p>
                 </div>
                 
                 <div class="footer-links">
@@ -153,73 +148,20 @@
                 <div class="footer-contact">
                     <h3>Contact Info</h3>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i>Lumbang, Kec. Sambas, Kabupaten Sambas, Kalimantan Barat</li>
-                        <li><i class="fas fa-phone"></i>+62 822-5015-5156</li>
-                        <li><i class="fas fa-envelope"></i> @razacafe.id</li>
-                        <li><i class="fas fa-clock"></i>Setiap hari:10.00 s/d 23.00 wib</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Lingkar Negara, Depan Bundaran Tugu Terigas Sambas</li>
+                        <li><i class="fas fa-phone"></i> 0822-5105-5154</li>
+                        <li><i class="fas fa-envelope"></i> razacafe.id@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Setiap Hari 10:00 - 23:00 WIB</li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 RAZA COFFEE. All rights reserved.</p>
+                <p>&copy; 2026 RAZA COFFEE & TEA. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // FAQ toggle functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', function() {
-                    const faqItem = this.parentElement;
-                    const answer = faqItem.querySelector('.faq-answer');
-                    const toggleIcon = this.querySelector('.faq-toggle i');
-                    
-                    // Toggle active class on FAQ item
-                    faqItem.classList.toggle('active');
-                    
-                    // Toggle icon
-                    if (faqItem.classList.contains('active')) {
-                        toggleIcon.classList.remove('fa-chevron-down');
-                        toggleIcon.classList.add('fa-chevron-up');
-                    } else {
-                        toggleIcon.classList.remove('fa-chevron-up');
-                        toggleIcon.classList.add('fa-chevron-down');
-                    }
-                });
-            });
-            
-            // Contact form submission
-            const contactForm = document.getElementById('contactForm');
-            const formMessage = document.getElementById('formMessage');
-            
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form values
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                
-                // Show success message
-                formMessage.textContent = `Thank you, ${name}! Your message has been sent. We'll get back to you at ${email} regarding your ${subject} inquiry.`;
-                formMessage.classList.remove('error');
-                formMessage.classList.add('success');
-                formMessage.style.display = 'block';
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
-            });
-        });
-    </script>
 </body>
 </html>

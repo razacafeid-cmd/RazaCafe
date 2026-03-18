@@ -7,13 +7,70 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Gaya tambahan untuk konsistensi */
+        .item-price-single {
+            font-weight: 700;
+            color: var(--primary-brown);
+            font-size: 1.2rem;
+            display: block;
+            line-height: 1.6;
+        }
+        .item-price-hot, .item-price-ice {
+            font-weight: 700;
+            color: var(--primary-brown);
+            font-size: 1.2rem;
+            display: block;
+            line-height: 1.6;
+        }
+        .item-label {
+            font-style: italic;
+            color: var(--light-brown);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .menu-item-card {
+            display: flex;
+            align-items: flex-start;
+        }
+        .item-image {
+            width: 120px;
+            height: 120px;
+            flex-shrink: 0;
+            margin-right: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .item-image img:hover {
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .menu-item-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .item-image {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <span class="logo-text">RAZA <span class="logo-highlight">COFFEE</span></span>
+                <span class="logo-text">RAZA <span class="logo-highlight">COFFEE & TEA</span></span>
             </a>
             
             <div class="nav-menu">
@@ -21,7 +78,6 @@
                 <a href="about.html" class="nav-link">About</a>
                 <a href="menu.html" class="nav-link active">Our Menu</a>
                 <a href="contact.html" class="nav-link">Contact Us</a>
-                <a href="#" class="btn-order">Order Online</a>
             </div>
             
             <button class="hamburger" id="hamburger">
@@ -31,13 +87,11 @@
             </button>
         </div>
         
-        <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <a href="index.html" class="mobile-nav-link">Home</a>
             <a href="about.html" class="mobile-nav-link">About</a>
             <a href="menu.html" class="mobile-nav-link active">Our Menu</a>
             <a href="contact.html" class="mobile-nav-link">Contact Us</a>
-            <a href="#" class="mobile-btn-order">Order Online</a>
         </div>
     </nav>
 
@@ -45,7 +99,7 @@
     <section class="page-hero non-coffee-hero">
         <div class="container">
             <h1 class="page-title fade-in">Non Coffee <span class="highlight">Menu</span></h1>
-            <p class="page-subtitle">Refreshing alternatives for those who prefer caffeine-free options</p>
+            <p class="page-subtitle">Alternatif menyegarkan untuk mereka yang lebih suka bebas kafein</p>
         </div>
     </section>
 
@@ -56,163 +110,322 @@
                 <div class="menu-back">
                     <a href="menu.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to All Categories</a>
                 </div>
-                <div class="menu-filter">
-                    <button class="filter-btn active" data-filter="all">All Drinks</button>
-                    <button class="filter-btn" data-filter="tea">Tea</button>
-                    <button class="filter-btn" data-filter="chocolate">Chocolate</button>
-                    <button class="filter-btn" data-filter="smoothie">Smoothies</button>
-                </div>
             </div>
             
             <div class="menu-items">
-                <!-- Tea -->
+                <!-- NON COFFEE (Milk Based) -->
                 <div class="menu-category">
-                    <h2 class="category-title">Tea Selection</h2>
+                    <h2 class="category-title">NON COFFEE</h2>
                     <div class="menu-items-grid">
-                        <div class="menu-item-card" data-category="tea">
+                        <!-- Matcha Greentea -->
+                        <div class="menu-item-card" data-category="noncoffee">
                             <div class="menu-item-content">
-                                <h3 class="item-name">English Breakfast</h3>
-                                <p class="item-description">A robust black tea blend perfect for starting your day</p>
-                                <div class="item-price">IDR 22K</div>
+                                <h3 class="item-name">Matcha Greentea</h3>
+                                <p class="item-description">Matcha halus dengan susu</p>
+                                <div class="price-container">
+                                    <span class="item-price-hot">Hot 16K</span>
+                                    <span class="item-price-ice">Cold 18K</span>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="menu-item-card" data-category="tea">
+                        <!-- Bubble gum -->
+                        <div class="menu-item-card" data-category="noncoffee">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Earl Grey</h3>
-                                <p class="item-description">Black tea flavored with oil of bergamot</p>
-                                <div class="item-price">IDR 22K</div>
+                                <h3 class="item-name">Bubble Gum</h3>
+                                <p class="item-description">Susu rasa bubble gum yang manis dan menyenangkan</p>
+                                <div class="price-container">
+                                    <span class="item-price-hot">Hot 16K</span>
+                                    <span class="item-price-ice">Cold 18K</span>
+
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="menu-item-card" data-category="tea">
+                        <!-- Cookies N Cream -->
+                        <div class="menu-item-card" data-category="noncoffee">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Chamomile</h3>
-                                <p class="item-description">Soothing herbal tea made from dried chamomile flowers</p>
-                                <div class="item-price">IDR 20K</div>
+                                <h3 class="item-name">Cookies N Cream</h3>
+                                <p class="item-description">Biskuit hancur dicampur dengan susu creamy</p>
+                                <div class="price-container">
+                                    <span class="item-price-hot">Hot 16K</span>
+                                    <span class="item-price-ice">Cold 18K</span>
+                                </div>
                             </div>
-                            <div class="item-badge">Caffeine Free</div>
                         </div>
-                        
-                        <div class="menu-item-card" data-category="tea">
+                        <!-- Chocolate Milk -->
+                        <div class="menu-item-card" data-category="noncoffee">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Chocolate Milk</h3>
+                                <p class="item-description">Susu cokelat yang kaya dan creamy</p>
+                                <div class="price-container">
+                                    <span class="item-price-hot">Hot 16K</span>
+                                    <span class="item-price-ice">Cold 18K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Red Velvet -->
+                        <div class="menu-item-card" data-category="noncoffee">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Red Velvet</h3>
+                                <p class="item-description">Susu rasa red velvet yang halus</p>
+                                <div class="price-container">
+                                    <span class="item-price-hot">Hot 16K</span>
+                                    <span class="item-price-ice">Cold 18K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Vanilla Delight -->
+                        <div class="menu-item-card" data-category="noncoffee">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Vanilla Delight</h3>
+                                <p class="item-description">Susu rasa vanilla yang creamy</p>
+                                <div class="price-container">
+                                    <span class="item-price-hot">Hot 16K</span>
+                                    <span class="item-price-ice">Cold 18K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Hazelnut Delight -->
+                        <div class="menu-item-card" data-category="noncoffee">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Hazelnut Delight</h3>
+                                <p class="item-description">Susu rasa hazelnut yang gurih</p>
+                                <div class="price-container">
+                                    <span class="item-price-hot">Hot 16K</span>
+                                    <span class="item-price-ice">Cold 18K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Strawberry Milk -->
+                        <div class="menu-item-card" data-category="noncoffee">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Strawberry Milk</h3>
+                                <p class="item-description">Susu rasa strawberry yang manis</p>
+                                <div class="price-container">
+                                    <span class="item-price-hot">Hot 16K</span>
+                                    <span class="item-price-ice">Cold 18K</span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mineral Water -->
+                        <div class="menu-item-card" data-category="noncoffee">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Mineral Water</h3>
+                                <p class="item-description">Air mineral murni dan menyegarkan</p>
+                                <div class="price-container">
+                                    <span class="item-price-ice">7K</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MOCKTAIL -->
+                <div class="menu-category">
+                    <h2 class="category-title">MOCKTAIL</h2>
+                    <div class="menu-items-grid">
+                        <!-- Funny Peach Coffee -->
+                        <div class="menu-item-card" data-category="mocktail">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Funny Peach Coffee</h3>
+                                <p class="item-description">Mocktail persik menyegarkan dengan sentuhan kopi</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">25K</span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Passion Fruit Coffee -->
+                        <div class="menu-item-card" data-category="mocktail">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Passion Fruit Coffee</h3>
+                                <p class="item-description">Buah passion yang asam dengan kopi</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">25K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mojito Mint -->
+                        <div class="menu-item-card" data-category="mocktail">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Mojito Mint</h3>
+                                <p class="item-description">Mojito mint klasik non-alkohol</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">23K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Summer Violet -->
+                        <div class="menu-item-card" data-category="mocktail">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Summer Violet</h3>
+                                <p class="item-description">Minuman musim panas yang beraroma bunga dan buah</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">23K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Yuriko -->
+                        <div class="menu-item-card" data-category="mocktail">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Yuriko</h3>
+                                <p class="item-description">Mocktail menyegarkan bergaya Jepang</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">23K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ocean Blue Ice -->
+                        <div class="menu-item-card" data-category="mocktail">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Ocean Blue Ice</h3>
+                                <p class="item-description">Minuman menyegarkan rasa blue curacao</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">23K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Orange Coffee -->
+                        <div class="menu-item-card" data-category="mocktail">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Orange Coffee</h3>
+
+                                <p class="item-description">Fusi jeruk dan kopi</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">23K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Yuzu Sparkle -->
+                        <div class="menu-item-card" data-category="mocktail">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Yuzu Sparkle</h3>
+                                <p class="item-description">Minuman citrus yuzu yang berkilau</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">23K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Manggo Squad -->
+                        <div class="menu-item-card" data-category="mocktail">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Manggo Squad</h3>
+                                <p class="item-description">Surga mangga dalam gelas</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">23K</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MATCHA SERIES -->
+                <div class="menu-category">
+                    <h2 class="category-title">MATCHA SERIES</h2>
+                    <div class="menu-items-grid">
+                        <!-- Strawberry Matcha -->
+                        <div class="menu-item-card" data-category="matcha">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Strawberry Matcha</h3>
+                                <p class="item-description">Strawberry manis dengan matcha earthy</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">25K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Coconut Matcha -->
+                        <div class="menu-item-card" data-category="matcha">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Coconut Matcha</h3>
+                                <p class="item-description">Kelapa creamy dengan matcha</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">25K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Peanut Matcha -->
+                        <div class="menu-item-card" data-category="matcha">
+                            <div class="menu-item-content">
+                                <h3 class="item-name">Peanut Matcha</h3>
+                                <p class="item-description">Selai kacang yang gurih dengan matcha</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">25K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Matcha Latte -->
+                        <div class="menu-item-card" data-category="matcha">
                             <div class="menu-item-content">
                                 <h3 class="item-name">Matcha Latte</h3>
-                                <p class="item-description">Premium Japanese matcha whisked with steamed milk</p>
-                                <div class="item-price">IDR 32K</div>
-                            </div>
-                            <div class="item-badge">Popular</div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="tea">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Jasmine Green Tea</h3>
-                                <p class="item-description">Green tea scented with jasmine flowers</p>
-                                <div class="item-price">IDR 20K</div>
+                                <p class="item-description">Matcha klasik dengan susu kukus</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">25K</span>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="menu-item-card" data-category="tea">
+                        <!-- Affogato Matcha -->
+                        <div class="menu-item-card" data-category="matcha">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Peppermint Tea</h3>
-                                <p class="item-description">Refreshing herbal tea made from peppermint leaves</p>
-                                <div class="item-price">IDR 20K</div>
+                                <h3 class="item-name">Affogato Matcha</h3>
+                                <p class="item-description">Matcha di atas es krim vanilla</p>
+                                <div class="price-container">
+                                    <span class="item-price-single">30K</span>
+                                </div>
                             </div>
-                            <div class="item-badge">Caffeine Free</div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Chocolate -->
+
+                <!-- TEA SERIES -->
                 <div class="menu-category">
-                    <h2 class="category-title">Chocolate Drinks</h2>
+                    <h2 class="category-title">TEA SERIES</h2>
                     <div class="menu-items-grid">
-                        <div class="menu-item-card" data-category="chocolate">
+                        <!-- Lychee Tea -->
+                        <div class="menu-item-card" data-category="tea">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Hot Chocolate</h3>
-                                <p class="item-description">Rich, creamy chocolate made with real cocoa and steamed milk</p>
-                                <div class="item-price">IDR 28K</div>
-                            </div>
-                            <div class="item-badge">Classic</div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="chocolate">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">White Hot Chocolate</h3>
-                                <p class="item-description">Creamy white chocolate with steamed milk and vanilla</p>
-                                <div class="item-price">IDR 30K</div>
+                                <h3 class="item-name">Lychee Tea</h3>
+                                <p class="item-description">Teh rasa lychee yang manis</p>
+                                <div class="price-container">
+                                    <span class="item-price-hot">Hot 13K</span>
+                                    <span class="item-price-ice">Cold 15K</span>
+
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="menu-item-card" data-category="chocolate">
+                        <!-- Lemon Tea -->
+                        <div class="menu-item-card" data-category="tea">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Iced Chocolate</h3>
-                                <p class="item-description">Chocolate syrup mixed with cold milk and served over ice</p>
-                                <div class="item-price">IDR 28K</div>
+                                <h3 class="item-name">Lemon Tea</h3>
+                                <p class="item-description">Teh lemon yang segar</p>
+                                <div class="price-container">
+                                    <span class="item-price-hot">Hot 13K</span>
+                                    <span class="item-price-ice">Cold 15K</span>
+
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="menu-item-card" data-category="chocolate">
+                        <!-- Jasmine Tea -->
+                        <div class="menu-item-card" data-category="tea">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Salted Caramel Hot Chocolate</h3>
-                                <p class="item-description">Rich chocolate with salted caramel syrup and whipped cream</p>
-                                <div class="item-price">IDR 32K</div>
-                            </div>
-                            <div class="item-badge">Seasonal</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Smoothies -->
-                <div class="menu-category">
-                    <h2 class="category-title">Smoothies & Refreshers</h2>
-                    <div class="menu-items-grid">
-                        <div class="menu-item-card" data-category="smoothie">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Mixed Berry Smoothie</h3>
-                                <p class="item-description">Strawberries, blueberries, raspberries blended with yogurt</p>
-                                <div class="item-price">IDR 35K</div>
-                            </div>
-                            <div class="item-badge">Antioxidant</div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="smoothie">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Mango Lassi</h3>
-                                <p class="item-description">Sweet mango blended with yogurt and a hint of cardamom</p>
-                                <div class="item-price">IDR 30K</div>
+                                <h3 class="item-name">Jasmine Tea</h3>
+                                <p class="item-description">Teh hijau melati yang harum</p>
+                                <div class="price-container">
+                                    <span class="item-price-hot">Hot 13K</span>
+                                    <span class="item-price-ice">Cold 15K</span>
+
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="menu-item-card" data-category="smoothie">
+                        <!-- Peach Tea -->
+                        <div class="menu-item-card" data-category="tea">
                             <div class="menu-item-content">
-                                <h3 class="item-name">Green Detox Smoothie</h3>
-                                <p class="item-description">Spinach, kale, apple, banana, and lemon juice</p>
-                                <div class="item-price">IDR 32K</div>
-                            </div>
-                            <div class="item-badge">Healthy</div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="smoothie">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Strawberry Banana Smoothie</h3>
-                                <p class="item-description">Classic combination of strawberries and banana with yogurt</p>
-                                <div class="item-price">IDR 30K</div>
-                            </div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="smoothie">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Lemonade</h3>
-                                <p class="item-description">Freshly squeezed lemons with just the right amount of sweetness</p>
-                                <div class="item-price">IDR 22K</div>
-                            </div>
-                        </div>
-                        
-                        <div class="menu-item-card" data-category="smoothie">
-                            <div class="menu-item-content">
-                                <h3 class="item-name">Iced Tea</h3>
-                                <p class="item-description">Freshly brewed black tea served chilled with lemon</p>
-                                <div class="item-price">IDR 20K</div>
+                                <h3 class="item-name">Peach Tea</h3>
+                                <p class="item-description">Teh infus peach yang manis</p>
+                                <div class="price-container">
+                                    <span class="item-price-hot">Hot 13K</span>
+                                    <span class="item-price-ice">Cold 15K</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -221,19 +434,12 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
                     <span class="logo-text">RAZA <span class="logo-highlight">COFFEE</span></span>
-                    <p>Premium coffee experience since 2010</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                    </div>
+                    <p>Teman Setia Setiap Hari</p>
                 </div>
                 
                 <div class="footer-links">
@@ -249,48 +455,20 @@
                 <div class="footer-contact">
                     <h3>Contact Info</h3>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Jl. Coffee Street No. 123, Jakarta</li>
-                        <li><i class="fas fa-phone"></i> (021) 1234-5678</li>
-                        <li><i class="fas fa-envelope"></i> info@razacoffee.com</li>
-                        <li><i class="fas fa-clock"></i> Mon-Sun: 7AM - 10PM</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Lingkar Negara, Depan Bundaran Tugu Terigas Sambas</li>
+                        <li><i class="fas fa-phone"></i> 0822-5105-5154</li>
+                        <li><i class="fas fa-envelope"></i> razacafe.id@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Setiap Hari 10:00 - 23:00 WIB</li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 RAZA COFFEE. All rights reserved.</p>
+                <p>&copy; 2026 RAZA COFFEE & TEA. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Filter functionality for non-coffee menu
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const menuItems = document.querySelectorAll('.menu-item-card');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    const filterValue = this.getAttribute('data-filter');
-                    
-                    // Show/hide menu items based on filter
-                    menuItems.forEach(item => {
-                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                            item.style.display = 'flex';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>
